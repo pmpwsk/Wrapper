@@ -6,7 +6,7 @@ static partial class Log
     ///<summary>
     ///The lock that should be entered to write to the log file. Other locking methods have to wait until it is finished.
     ///</summary>
-    static ReaderWriterLockSlim Lock = new();
+    static readonly ReaderWriterLockSlim Lock = new();
 
     ///<summary>
     ///The count of characters that have been written to the log file so far.
@@ -62,8 +62,8 @@ static partial class Log
 
         if (WrittenLines + 1 > Config.LogLimit)
         {
-            using StreamReader reader = new StreamReader(Config.LogFile);
-            using StreamWriter writer = new StreamWriter($"{Config.LogFile}.temp", false);
+            using StreamReader reader = new(Config.LogFile);
+            using StreamWriter writer = new($"{Config.LogFile}.temp", false);
             long newCount = 0;
             long toSkip = Config.LogLimit * 2 / 3;
             string? line;

@@ -9,7 +9,7 @@ static class Target
     ///<summary>
     ///The process for the target. It stays the same, only the file and arguments change.
     ///</summary>
-    static Process TargetProcess = new();
+    static readonly Process TargetProcess = new();
 
     ///<summary>
     ///Indicates whether to continue listening to target output or abort.

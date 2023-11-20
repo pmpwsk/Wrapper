@@ -6,7 +6,7 @@ static class Wrapper
     ///<summary>
     ///The main program logic.
     ///</summary>
-    public static void Main(string[] args)
+    public static void Main(string[] _)
     {
         try
         {
