@@ -20,7 +20,7 @@ static class Wrapper
 
         Target.ConfigureProcess();
 
-        Log.Wrapper("uwap.dev/wrapper 2.1.3");
+        Log.Wrapper("uwap.org/wrapper 2.1.3.2");
 
         try
         {
